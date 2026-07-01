@@ -1,0 +1,602 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0f0f0f;
+    margin: 0;
+}
+
+h1, h2, h4 {
+    margin: 0;
+    font-family: 'Fredoka', sans-serif;
+    color: #F5F5F5;
+}
+
+h1 {
+    font-size: clamp(3.5rem, 6vw, 6.5rem);
+}
+
+h2 { font-size: clamp(2.5rem, 4vw, 3rem);
+    font-weight: 500; 
+}
+
+h4 { 
+    font-size: 25px; 
+}
+
+b {
+    color: #b74cff;
+}
+
+a {
+  color: #F5F5F5;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #b74cff;
+}
+
+p {
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* ===== HEADER ===== */
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid white;
+    background: #0f0f0f;
+    z-index: 100;
+}
+
+.banner-inner {
+    max-width: 1800px;
+    margin: 0 auto;
+    height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand img {
+    width: 45px;
+    height: 45px;
+}
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none; /* Evita que salga una línea por debajo del texto al ser un enlace */
+}
+
+.brand-link img {
+    width: 45px;
+    height: 45px;
+}
+
+/* Opcional: un pequeño efecto al pasar el ratón para que se note que es clickable */
+.brand-link:hover h4 {
+    color: #b74cff; /* Se vuelve morado al pasar el ratón */
+    transition: color 0.3s ease;
+}
+
+.links {
+    display: flex;
+    gap: 60px;
+    font-size: 25px;
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* ===== HERO ===== */
+.hero {
+    max-width: 1800px;
+    margin: 180px auto 0; /* Ajustado para que no haya un hueco gigante arriba */
+    padding: 0 40px 100px; /* El 100px da el espacio hasta la línea morada */
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    border-bottom: 1px solid #b74cff; /* Línea morada separadora */
+}
+
+.hero-left {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-left h2 {
+    margin-top: 8px;
+}
+
+.hero-text {
+    color: #c9c9c9;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    max-width: 480px;
+}
+
+.hero-cta {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1px solid #b74cff;
+    border-radius: 18px;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.btn:hover {
+    background: #9900ff;
+    color: #fff;
+}
+
+.socials {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.socials a {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #2c2c38;
+    background: #16161D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+}
+
+.socials a:hover {
+    border-color: #b74cff;
+    background-color: #b74cff;
+    transform: translateY(-3px);
+}
+
+.socials img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.hero-right {
+    flex: 1.8;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 0;
+}
+
+.showreel {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    border: 1px solid #2c2c38;
+}
+
+/* ===== ABOUT ===== */
+.about {
+    position: relative;
+    padding: 100px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    overflow: hidden;
+    border-bottom: 1px solid #b74cff; /* Línea morada separadora */
+}
+
+.about-card {
+    position: relative;     /* ← faltaba esto */
+    z-index: 2;              /* ← faltaba esto: la tarjeta por delante */
+    background: #16161D;
+    border: 1px solid #2c2c38;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-card p {
+    color: #c9c9c9;
+    margin-top: 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-group {
+    margin-top: 24px;
+}
+
+.skill-group:first-of-type {
+    margin-top: 28px;
+}
+
+.skill-group h4 {
+    font-size: 0.85rem;
+    color: #b74cff;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.85rem;
+    color: #F5F5F5;
+    background: #0f0f0f;
+    border: 1px solid #2c2c38;
+    border-radius: 999px;
+    padding: 6px 14px;
+}
+
+.marquee {
+    position: absolute;     /* ← faltaba esto: lo saca del flujo normal */
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 1;               /* ← faltaba esto: por detrás de la tarjeta */
+    margin-top: 0;            /* quita el margin-top: 60px que tenías, ya no aplica igual */
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;   /* deja que la fila sea tan ancha como su contenido real */
+    gap: 32px;
+    animation: scroll-left 20s linear infinite;
+}
+
+.marquee-track img {
+    height: 340px;        /* todas las imágenes a la misma altura, se escalan solas */
+    width: auto;
+    border-radius: 10px;
+    flex-shrink: 0;       /* evita que se compriman entre sí */
+}
+
+.projects {
+    padding: 100px 40px;
+    border-bottom: solid #b74cff;
+}
+
+.projects-inner {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+
+.project:last-child {
+    margin-bottom: 0;
+}
+
+/* esto es lo que invierte el orden visual sin tocar el HTML */
+.project.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-media {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;        /* recorta lo que sobre del vídeo si no encaja exacto */
+}
+
+.project-media video,
+.project-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* la pieza clave: rellena el hueco sin deformarse */
+    border-radius: 12px;
+    border: 1px solid #2c2c38;
+    display: block;
+}
+
+.project-info {
+    flex: 1;
+    font-size: 20px;
+    min-width: 280px;
+}
+
+.project-tool {
+    display: inline-block;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.85rem;
+    color: #b74cff;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.project-info h3 {
+    font-family: 'Fredoka', sans-serif;
+    color: #F5F5F5;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: 14px;
+}
+
+.project-info p {
+    color: #c9c9c9;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.itch-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    border: 1px solid #2c2c38;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color .2s ease, background-color .2s ease;
+}
+
+.itch-link img {
+    width: 20px;
+    height: 20px;
+}
+
+.itch-link:hover {
+    border-color: #b74cff;
+    background-color: #b74cff;
+}
+
+.contact {
+    padding: 100px 40px;
+}
+
+.contact-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-lead {
+    color: #c9c9c9;
+    margin-top: 14px;
+    font-size: 1.05rem;
+}
+
+.contact-card {
+    background: #16161D;
+    border: 1px solid #2c2c38;
+    border-radius: 16px;
+    padding: 40px;
+    margin-top: 40px;
+    text-align: left;       /* el texto del formulario no queda centrado, solo el título de arriba */
+    box-sizing: border-box;
+}
+
+.form-row {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-row label {
+    font-family: 'Fredoka', sans-serif;
+    color: #F5F5F5;
+    font-size: 1rem;
+}
+
+.form-row input,
+.form-row textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 12px 14px;
+    border: 1px solid #2c2c38;
+    border-radius: 10px;
+    background: #0f0f0f;
+    color: #F5F5F5;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.form-row input,
+.form-row textarea {
+    font-family: 'Fredoka', sans-serif;   /* en vez de "inherit" */
+    font-size: 1rem;
+    padding: 12px 14px;
+    border: 1px solid #2c2c38;
+    border-radius: 10px;
+    background: #0f0f0f;
+    color: #F5F5F5;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.contact-card .btn {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    color: #F5F5F5;
+    font-size: 1rem;
+}
+
+.form-status {
+    margin-top: 14px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.form-status.ok { color: #4ADE80; }
+.form-status.err { color: #F87171; }
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+    font-family: 'Fredoka', sans-serif;
+    color: #8a8a99;       /* opcional: un gris suave para diferenciarlo del texto que escribe el usuario */
+}
+.contact-fallback {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #8a8a99;
+}
+
+.contact-fallback strong {
+    color: #9900ff;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .contact {
+        padding: 60px 24px;
+    }
+    .contact-card {
+        padding: 28px;
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .project,
+    .project.reverse {
+        flex-direction: column;   /* en móvil, siempre apilado igual, sin zigzag */
+        text-align: center;
+        gap: 24px;
+        margin-bottom: 60px;
+    }
+    .project-media {
+        width: 100%;
+    }
+    .itch-link {
+        margin: 0 auto;
+    }
+}
+
+@keyframes scroll-left {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-33.333%); }  /* -50% porque hay el doble de imágenes (duplicadas) */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+}
+
+
+@media (max-width: 1000px) {
+    .banner {
+        height: auto;
+        padding: 16px 0;
+    }
+
+    .banner-inner {
+        flex-direction: column;
+        height: auto;
+        gap: 14px;
+        padding: 0 24px;
+    }
+
+    .links {
+        gap: 20px;
+        font-size: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        margin-top: 120px; /* Separación con el menú superior */
+        padding: 0 24px 60px;
+    }
+
+    .about {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 60px 24px; 
+        /* max-height: 500%; <- ELIMINADO PARA QUE NO ROMPA NADA */
+    }
+    .hero-text {
+        margin: 20px auto 0;
+    }
+
+    .marquee {
+        display: none;
+    }
+
+    .hero-cta {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-card {
+        max-width: 100%;          /* que ocupe el ancho disponible, no se quede fijo a 700px */
+    }
+
+    .socials {
+        justify-content: center;
+    }
+    .hero-left {
+        min-width: 0;
+    }
+    .showreel {
+        max-width: 100%;
+    }
+    .links {
+        gap: 24px;
+        font-size: 18px;
+    }
+    .about {
+        padding: 60px 24px;
+    }
+    .about-card {
+        padding: 28px;
+    }
+}
